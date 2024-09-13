@@ -1,15 +1,13 @@
 program MachineEpsilon
     implicit none
-    integer, parameter :: hp = selected_real_kind(3, 15)
-    real(kind=hp) :: epsilon
-    integer :: iterations
+    real :: epsilon
+    integer:: iterations
+    epsilon = 1.0
     iterations = 0
-    epsilon = 1.0_hp
-    do while (1.0_hp + epsilon > 1.0_hp)
-        epsilon = epsilon / 2.0_hp
+    do while (1.0 + epsilon /= 1.0)
+        epsilon = epsilon / 2.0
         iterations = iterations + 1
     end do
-    write(*,*) "Machine epsilon for float16:", epsilon
-    write(*,*) "Number of iterations:", iterations
-
+    print *, "The machine epsilon is: ", epsilon
+    print *, "The number of iterations is: ", iterations
 end program MachineEpsilon
