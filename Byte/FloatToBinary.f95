@@ -1,4 +1,5 @@
 program GPTgeneratedFloatToBinary
+implicit none
 character(len=16):: BinaryString,Mantissa
 real,dimension(32):: IntegralParts
 real:: float,integralPart
